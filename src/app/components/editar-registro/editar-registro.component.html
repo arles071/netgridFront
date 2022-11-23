@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="formularioeditarregistro" (ngSubmit)="editarregistro()" class="mt-3">
+                <div class="mb-3">
+                    <label for="floatingInput">Nombre</label>
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password">Contraseña (opcional)</label>
+                    <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="c_password">Repetir Contraseña (opcional)</label>
+                    <input type="password" class="form-control" formControlName="c_password" id="c_password" placeholder="Repetir contraseña">
+                </div>
+                <div class="mb-3">
+                    <label for="address">Dirección</label>
+                    <input type="text" class="form-control" formControlName="address" id="address" placeholder="Dirección">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="birthdate">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" formControlName="birthdate" id="birthdate" placeholder="Fecha de nacimiento">
+                </div>
+                <div class="mb-3">
+                    <label for="city">Ciudad</label>
+                    <input type="text" class="form-control" formControlName="city" id="city" placeholder="Ciudad">
+                </div>
+
+                <div class="mb-3" *ngIf="infoError != ''">
+                      <div class="alert alert-warning">{{ infoError }}</div>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Editar perfil</button>
+            </form>
+        </div>
+    </div>
+    
+</div>

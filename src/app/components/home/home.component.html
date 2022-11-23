@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 p-4">
+    <div *ngFor="let item of dataInfo" class="col favorite-container">
+      <div class="favorite" [ngClass]="item.favorite ? 'active': ''" (click)="addFavorite(item)"></div>
+      <div class="card">
+        <img src="{{item.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title cursor-pointer" (click)="varItem(item);">{{item.name}}</h5>
+          <p>Genero: {{ item.gender }}</p>
+          <p>Especie: {{ item.species }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div [ngClass]="showModal ? 'modal fade show' : 'modal fade'" id="exampleModalToggle" [style.display]="showModal ? 'block' : 'none'" style="display: block;" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">{{ personajeSelecionado !== undefined ? personajeSelecionado.name : '' }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="close();" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" *ngIf="personajeSelecionado !== undefined">
+          
+          <div class="row row-cols-1 mt-1 p-1">
+            <div class="col favorite-container">
+              <div class="favorite" [ngClass]="personajeSelecionado.favorite ? 'active': ''" (click)="addFavorite(personajeSelecionado)"></div>
+              <div class="card">
+                <img src="{{personajeSelecionado.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{personajeSelecionado.name}}</h5>
+                  <p>Genero: {{ personajeSelecionado.gender }}</p>
+                  <p>Especie: {{ personajeSelecionado.species }}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="close();">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

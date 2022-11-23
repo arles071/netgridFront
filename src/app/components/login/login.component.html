@@ -1,0 +1,32 @@
+<div class="div_body row text-center">
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="formulario" (ngSubmit)="login()">
+      <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Bienvenido a netsgrid</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com" required>
+        <label for="floatingInput">Correo electrónico</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar contraseña
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sección</button>
+      <p class="mt-1">Soy un nuevo usuarion <a routerLink="/registro">registrarme</a></p>
+      <p class="mt-5 mb-3 text-muted">© 2022–2027</p>
+    </form>
+
+    <div class="row" *ngIf="infoError != ''">
+      <div class="col">
+        <div class="alert alert-warning">{{ infoError }}</div>
+      </div>
+    </div>
+</main>
+</div>

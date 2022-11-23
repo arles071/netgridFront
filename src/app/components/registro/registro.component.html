@@ -1,0 +1,48 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="formularioregistro" (ngSubmit)="registrarme()">
+      <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Bienvenido a netsgrid</h1>
+
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nombre">
+        <label for="floatingInput">Nombre</label>
+      </div>
+  
+      <div class="form-floating mt-2">
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+        <label for="email">Correo electrónico</label>
+      </div>
+      <div class="form-floating mt-2">
+        <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+        <label for="password">Contraseña</label>
+      </div>
+
+      <div class="form-floating mt-2">
+        <input type="password" class="form-control" formControlName="c_password" id="c_password" placeholder="c_password">
+        <label for="c_password">Repetir Contraseña</label>
+      </div>
+
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" formControlName="address" id="address" placeholder="Dirección">
+        <label for="address">Dirección</label>
+      </div>
+
+
+      <div class="form-floating mt-2">
+        <input type="date" class="form-control" formControlName="birthdate" id="birthdate" placeholder="Fecha de nacimiento">
+        <label for="birthdate">Fecha de nacimiento</label>
+      </div>
+
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" formControlName="city" id="city" placeholder="Ciudad">
+        <label for="city">Ciudad</label>
+      </div>
+
+      <div class="form-floating mt-2" *ngIf="infoError != ''">
+        <div class="alert alert-warning">{{ infoError }}</div>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarme</button>
+      <p class="mt-1">Iniciar sessión <a routerLink="/login">aqui</a></p>
+      <p class="mt-5 mb-3 text-muted">© 2022–2027</p>
+    </form>
+</main>
